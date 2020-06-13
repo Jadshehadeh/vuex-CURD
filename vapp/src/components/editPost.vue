@@ -26,8 +26,8 @@ export default {
 
     methods: {
         submit() {
-            let uri = 'http://localhost:8000/api/posts';
-            axios.post(uri, this.post).then(() => {
+            let uri = 'http://localhost:8000/api/posts/' + this.$route.params.id;
+            axios.put(uri, this.post).then(() => {
                 this.$router.push({
                     name: 'posts'
                 })
